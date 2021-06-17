@@ -21,3 +21,8 @@ export const patchTodo = (todo: Todo) => {
     .patch(`${Endpoints.TODO}/${todo.id}`, todo)
     .then((res) => res.data);
 };
+export const postTodo = (todo: Todo) => {
+  return client
+    .post<Todo>(`${Endpoints.TODO}`, todo)
+    .then((res) => res.data);
+};
